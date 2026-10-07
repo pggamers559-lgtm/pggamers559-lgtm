@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ff4f81">
+
+  <title>For Geetanjali Ji ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top, #ffd6e5 0%, transparent 35%),
+        linear-gradient(135deg, #ff758c, #ff7eb3);
+      overflow: hidden;
+      color: white;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .card {
+      width: min(500px, 95vw);
+      padding: 40px 25px;
+      text-align: center;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255,255,255,0.35);
+      box-shadow: 0 20px 60px rgba(100, 0, 40, 0.25);
+      position: relative;
+      z-index: 5;
+    }
+
+    .heart {
+      font-size: 60px;
+      animation: heartbeat 1.3s infinite;
+      margin-bottom: 15px;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.18);
+      }
+    }
+
+    h1 {
+      font-size: clamp(30px, 8vw, 48px);
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #fff4f8;
+    }
+
+    .buttons {
+      position: relative;
+      height: 120px;
+      margin-top: 20px;
+    }
+
+    button {
+      border: none;
+      border-radius: 50px;
+      padding: 15px 28px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.25s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    }
+
+    #yesBtn {
+      background: white;
+      color: #ff3f78;
+      position: relative;
+      z-index: 3;
+    }
+
+    #yesBtn:hover {
+      transform: scale(1.08);
+    }
+
+    #noBtn {
+      background: rgba(255,255,255,0.3);
+      color: white;
+      position: absolute;
+      left: 55%;
+      top: 55px;
+      z-index: 10;
+    }
+
+    .small {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-top: 15px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Floating hearts */
+    .floating-heart {
+      position: fixed;
+      bottom: -50px;
+      font-size: 25px;
+      animation: floatUp linear forwards;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+
+      to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Confetti */
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 18px;
+      top: -20px;
+      z-index: 100;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(720deg);
+      }
+    }
+
+    .love-letter {
+      background: rgba(255,255,255,0.15);
+      padding: 20px;
+      border-radius: 20px;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .signature {
+      text-align: right;
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .final-heart {
+      font-size: 80px;
+      animation: heartbeat 1s infinite;
+      margin: 15px 0;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 30px 18px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      button {
+        padding: 13px 22px;
+        font-size: 16px;
+      }
+
+      .buttons {
+        height: 140px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PAGE 1 -->
+  <div class="page" id="page1">
+    <div class="card">
+
+      <div class="heart">❤️</div>
+
+      <h1>Happy Birthday!</h1>
+
+      <h2>Geetanjali Ji 🎂</h2>
+
+      <p>
+        Mr. Charming has prepared a very important question
+        for the birthday girl...
+      </p>
+
+      <p class="highlight">
+        And you have to answer honestly. 👀
+      </p>
+
+      <p>
+        Will you let me make your birthday a little more special? 🥺❤️
+      </p>
+
+      <div class="buttons">
+
+        <button id="yesBtn" onclick="sayYes()">
+          YES ❤️
+        </button>
+
+        <button id="noBtn">
+          NO 🙈
+        </button>
+
+      </div>
+
+      <div class="small">
+        Choose wisely, Geetanjali Ji... 😌
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- PAGE 2 -->
+  <div class="page hidden" id="page2">
+    <div class="card">
+
+      <div class="final-heart">💖</div>
+
+      <h1>I KNEW IT! 😌</h1>
+
+      <h2>Geetanjali Ji ❤️</h2>
+
+      <div class="love-letter">
+
+        <p>
+          Okay... now that you said YES,
+          Mr. Charming can finally say what he wanted to say. 🥹
+        </p>
+
+        <p>
+          Your <span class="highlight">eyes</span> have some kind of
+          unfair superpower. 👀❤️
+        </p>
+
+        <p>
+          And your <span class="highlight">smile</span>?
+          Honestly... that's just cheating. 😭❤️
+        </p>
+
+        <p>
+          You have this amazing way of making ordinary moments
+          feel special.
+        </p>
+
+        <p>
+          So today, on your birthday, I just want you to know
+          that you are very, very special to me. ❤️
+        </p>
+
+        <p>
+          Keep smiling, keep being the wonderful person you are,
+          and please keep giving Mr. Charming reasons to smile too. 🫶
+        </p>
+
+        <div class="signature">
+          — Your Mr. Charming 😎❤️
+        </div>
+
+      </div>
+
+      <br>
+
+      <button onclick="celebrate()">
+        One More Surprise 🎁
+      </button>
+
+    </div>
+  </div>
+
+
+  <!-- PAGE 3 -->
+  <div class="page hidden" id="page3">
+    <div class="card">
+
+      <div class="final-heart">🎉❤️🎂</div>
+
+      <h1>Happy Birthday!</h1>
+
+      <h2>Geetanjali Ji 💕</h2>
+
+      <p>
+        May your smile always be this beautiful,
+        your eyes always sparkle,
+        and your life always be filled with happiness. ✨
+      </p>
+
+      <p class="highlight">
+        Today is your day. Enjoy every second of it! 🥳
+      </p>
+
+      <p>
+        And remember...
+      </p>
+
+      <h2>
+        Mr. Charming is always cheering for you. 😎❤️
+      </h2>
+
+      <p>
+        🎂 Happy Birthday, Birthday Girl! 🎂
+      </p>
+
+    </div>
+  </div>
+
+
+  <script>
+
+    const noBtn = document.getElementById("noBtn");
+
+    const funnyMessages = [
+      "Nice try 😂",
+      "Nope! 😌",
+      "Are you sure? 👀",
+      "Think again! ❤️",
+      "The NO button is shy 🙈",
+      "Mr. Charming objects! 😭",
+      "Wrong button 😂",
+      "Try YES instead 😏",
+      "You can't escape this! ❤️",
+      "Hehe... NO is unavailable 😌"
+    ];
+
+    let messageIndex = 0;
+
+
+    function moveNoButton() {
+
+      const maxX = window.innerWidth - noBtn.offsetWidth - 20;
+      const maxY = window.innerHeight - noBtn.offsetHeight - 20;
+
+      const randomX = Math.max(10, Math.random() * maxX);
+      const randomY = Math.max(10, Math.random() * maxY);
+
+      noBtn.style.position = "fixed";
+      noBtn.style.left = randomX + "px";
+      noBtn.style.top = randomY + "px";
+
+      noBtn.innerText = funnyMessages[messageIndex];
+
+      messageIndex++;
+
+      if (messageIndex >= funnyMessages.length) {
+        messageIndex = 0;
+      }
+    }
+
+
+    /* Works for both phone touch and computer mouse */
+    noBtn.addEventListener("mouseenter", moveNoButton);
+    noBtn.addEventListener("touchstart", function(event) {
+      event.preventDefault();
+      moveNoButton();
+    });
+
+    noBtn.addEventListener("click", function(event) {
+      event.preventDefault();
+      moveNoButton();
+    });
+
+
+    function sayYes() {
+
+      document.getElementById("page1").classList.add("hidden");
+      document.getElementById("page2").classList.remove("hidden");
+
+      createHearts(25);
+
+    }
+
+
+    function celebrate() {
+
+      document.getElementById("page2").classList.add("hidden");
+      document.getElementById("page3").classList.remove("hidden");
+
+      createHearts(40);
+      createConfetti(100);
+
+    }
+
+
+    function createHearts(amount) {
+
+      for (let i = 0; i < amount; i++) {
+
+        setTimeout(() => {
+
+          const heart = document.createElement("div");
+
+          heart.className = "floating-heart";
+
+          const hearts = ["❤️", "💖", "💕", "💗", "💓", "💘"];
+
+          heart.innerText =
+            hearts[Math.floor(Math.random() * hearts.length)];
+
+          heart.style.left =
+            Math.random() * 100 + "vw";
+
+          heart.style.animationDuration =
+            (3 + Math.random() * 4) + "s";
+
+          heart.style.fontSize =
+            (18 + Math.random() * 25) + "px";
+
+          document.body.appendChild(heart);
+
+          setTimeout(() => {
+            heart.remove();
+          }, 7000);
+
+        }, i * 80);
+
+      }
+
+    }
+
+
+    function createConfetti(amount) {
+
+      for (let i = 0; i < amount; i++) {
+
+        setTimeout(() => {
+
+          const confetti = document.createElement("div");
+
+          confetti.className = "confetti";
+
+          confetti.style.left =
+            Math.random() * 100 + "vw";
+
+          confetti.style.background =
+            `hsl(${Math.random() * 360}, 90%, 60%)`;
+
+          confetti.style.animationDuration =
+            (2 + Math.random() * 4) + "s";
+
+          confetti.style.transform =
+            `rotate(${Math.random() * 360}deg)`;
+
+          document.body.appendChild(confetti);
+
+          setTimeout(() => {
+            confetti.remove();
+          }, 6000);
+
+        }, i * 20);
+
+      }
+
+    }
+
+
+    /* Continuous subtle floating hearts */
+    setInterval(() => {
+
+      const heart = document.createElement("div");
+
+      heart.className = "floating-heart";
+
+      heart.innerText = "❤️";
+
+      heart.style.left =
+        Math.random() * 100 + "vw";
+
+      heart.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 10000);
+
+    }, 1200);
+
+  </script>
+
+</body>
+</html>
